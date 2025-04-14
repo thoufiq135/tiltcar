@@ -1,0 +1,146 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100%;
+  width:100%;
+}
+#button1 {
+  position: fixed;
+  top:50vh;
+  left:45vw;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: gray;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+}
+
+#button1:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  color: white;
+}
+
+#button1:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+#button1::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+#button1:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+p{
+  position: fixed;
+  top:50vh;
+  left:30vw;
+  font-size: 7vh;
+}
+#car{
+  height:15vh;
+  width:15vh;
+  background-color: gray;
+  text-align: center;
+  font-size: 10vh;
+  border-radius: 2vh;
+  border: 0.2vh solid black;
+  position: fixed;
+ left: 45vw;
+ top: 20vh;
+}
+#front{
+  height:15vh;
+  width:15vh;
+  border:0.2vh solid black;
+  text-align: center;
+  position:fixed;
+  top:4vh;
+  left:45vw;
+  border-radius: 2vh;
+  padding-top: 5vh;
+}
+#back{
+  height:15vh;
+  width:15vh;
+  border:0.2vh solid black;
+  text-align: center;
+  padding-top: 5vh;
+  position: fixed;
+  top:36vh;
+  left:45vw;
+  border-radius: 2vh;
+}
+#left{
+  height:15vh;
+  width:15vh;
+  border:0.2vh solid black;
+  text-align: center;
+  border-radius: 2vh;
+  padding-top: 5vh;
+  position: fixed;
+  top:20vh;
+  left:37vw
+}
+#right{
+  height:15vh;
+  width:15vh;
+  border:0.2vh solid black;
+  text-align: center;
+  border-radius: 2vh;
+  padding-top: 5vh;
+  position: fixed;
+  top:20vh;
+  left:53vw
+}
