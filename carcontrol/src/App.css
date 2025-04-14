@@ -85,15 +85,15 @@ body{
 p{
   position: fixed;
   top:50vh;
-  left:30vw;
-  font-size: 7vh;
+  left:10vw;
+  font-size: 4vh;
 }
 #car{
-  height:15vh;
-  width:15vh;
+  height:10vh;
+  width:10vh;
   background-color: gray;
   text-align: center;
-  font-size: 10vh;
+  font-size: 8vh;
   border-radius: 2vh;
   border: 0.2vh solid black;
   position: fixed;
@@ -101,46 +101,50 @@ p{
  top: 20vh;
 }
 #front{
-  height:15vh;
-  width:15vh;
+  height:10vh;
+  width:10vh;
   border:0.2vh solid black;
   text-align: center;
   position:fixed;
-  top:4vh;
+  top:9vh;
   left:45vw;
   border-radius: 2vh;
-  padding-top: 5vh;
+  padding-top: 2vh;
+  font-size: 5vh;
 }
 #back{
-  height:15vh;
-  width:15vh;
+  height:10vh;
+  width:10vh;
   border:0.2vh solid black;
   text-align: center;
-  padding-top: 5vh;
+  padding-top: 2vh;
   position: fixed;
-  top:36vh;
+  top:32vh;
   left:45vw;
   border-radius: 2vh;
+  font-size: 5vh;
 }
 #left{
-  height:15vh;
-  width:15vh;
+  height:10vh;
+  width:10vh;
   border:0.2vh solid black;
   text-align: center;
   border-radius: 2vh;
-  padding-top: 5vh;
+  padding-top: 2.5vh;
   position: fixed;
   top:20vh;
-  left:37vw
+  left:22vw;
+  font-size: 5vh;
 }
 #right{
-  height:15vh;
-  width:15vh;
+  height:10vh;
+  width:10vh;
   border:0.2vh solid black;
   text-align: center;
   border-radius: 2vh;
-  padding-top: 5vh;
+  padding-top: 2.5vh;
   position: fixed;
   top:20vh;
-  left:53vw
+  left:68vw;
+  font-size: 5vh;
 }

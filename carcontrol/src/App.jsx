@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarOn,faArrowUp,faArrowDown,faArrowLeft,faArrowRight} from '@fortawesome/free-solid-svg-icons'
 function App() { 
   const[direction,setdirection]=useState(null)
-  const[fardirection,setfardirection]=useState(false)
-  const[backdirection,setbackdirection]=useState(false)
-  const[leftdirection,setleftdirection]=useState(false)
-  const[rightdirection,setrightdirection]=useState(false)
+  const[fardirection,setfardirection]=useState(true)
+  const[backdirection,setbackdirection]=useState(true)
+  const[leftdirection,setleftdirection]=useState(true)
+  const[rightdirection,setrightdirection]=useState(true)
   const[btngo,setbtngo]=useState(false)
   async function senddata(dir){
     
