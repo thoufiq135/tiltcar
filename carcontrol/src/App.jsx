@@ -13,21 +13,23 @@ function App() {
   const device_label="car-control"
  
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
-  async function senddata(dir){
+function senddata(dir){
     // const exdata=Math.random(1,5)*10
-    try{
-      await fetch(url,{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          "X-Auth-Token": ubidotstoken
-        },
-        body:JSON.stringify({directions:{"value":dir}})
-        
-      })   
-    }catch(e){
-      console.log("error at sending the data ")
-    }
+    useEffect(async()=>{
+      try{
+        await fetch(url,{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json",
+            "X-Auth-Token": ubidotstoken
+          },
+          body:JSON.stringify({directions:{"value":dir}})
+          
+        })   
+      }catch(e){
+        console.log("error at sending the data ")
+      }
+    },[direction])
     console.log("data transerfer completed🥳")
   }
 function values(){
