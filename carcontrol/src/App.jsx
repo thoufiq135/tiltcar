@@ -12,7 +12,7 @@ function App() {
   async function senddata(dir){
     let exdir="farward"
     try{
-      await fetch("http://localhost:5000/orentatiodata",{
+      await fetch("http://192.168.29.132:5000/orentatiodata",{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
