@@ -13,25 +13,29 @@ function App() {
   const device_label="car-control"
  
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
-function senddata(dir){
+
     // const exdata=Math.random(1,5)*10
-    useEffect(async()=>{
-      try{
-        await fetch(url,{
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json",
-            "X-Auth-Token": ubidotstoken
-          },
-          body:JSON.stringify({directions:{"value":dir}})
-          
-        })   
-      }catch(e){
-        console.log("error at sending the data ")
+    useEffect(()=>{
+      const setdata=async ()=>{
+        try{
+          await fetch(url,{
+            method:"POST",
+            headers:{
+              "Content-Type":"application/json",
+              "X-Auth-Token": ubidotstoken
+            },
+            body:JSON.stringify({directions:{"value":direction}})
+            
+          })
+          console.log("data transerfer completed🥳")   
+        }catch(e){
+          console.log("error at sending the data ")
+        }
       }
+      setdata()
     },[direction])
-    console.log("data transerfer completed🥳")
-  }
+    
+  
 function values(){
   setbtngo(true)
   window.addEventListener("deviceorientation",(e)=>{
@@ -64,10 +68,7 @@ function values(){
     }else{
       console.log("Tilt the Phone")
     }
-    if(direction!=null){
-      senddata(direction)
-      
-    }
+   
   })
 }
 
@@ -80,7 +81,7 @@ function values(){
      {backdirection?<div id='back'><FontAwesomeIcon icon={faArrowDown} bounce /></div>:""}
      {leftdirection?<div id='left'><FontAwesomeIcon icon={faArrowLeft} beat /></div>:""}
      {rightdirection?<div id='right'><FontAwesomeIcon icon={faArrowRight} beat /></div>:""}
-     <div id='car' onClick={senddata}>
+     <div id='car'>
      <FontAwesomeIcon icon={faCarOn} />
      </div>
      <p>Tilt any side of your phone🥳</p>
