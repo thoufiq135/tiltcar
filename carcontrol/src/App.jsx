@@ -14,7 +14,7 @@ function App() {
  
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
   async function senddata(dir){
-    const exdata=1
+
     try{
       await fetch(url,{
         method:"POST",
@@ -22,7 +22,7 @@ function App() {
           "Content-Type":"application/json",
           "X-Auth-Token": ubidotstoken
         },
-        body:JSON.stringify({directions:{"value":exdata}})
+        body:JSON.stringify({directions:{"value":dir}})
       })   
     }catch(e){
       console.log("error at sending the data ")
@@ -34,25 +34,25 @@ function values(){
     let {beta,gamma}=e
     console.log(beta,gamma)
     if(beta>15){
-      setdirection ("farward")
+      setdirection (1)
       setfardirection(true)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(false)
     }else if(beta<-15){
-      setdirection("backward") 
+      setdirection(2) 
       setfardirection(false)
       setbackdirection(true)
       setleftdirection(false)
       setrightdirection(false)    
     }else if(gamma>15){
-      setdirection("right") 
+      setdirection(3) 
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(true)
     }else if(gamma<-15) {
-      setdirection("left")
+      setdirection(4)
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(true)
