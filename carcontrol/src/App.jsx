@@ -22,7 +22,7 @@ function App() {
           "Content-Type":"application/json",
           "X-Auth-Token": ubidotstoken
         },
-        body:JSON.stringify({directions:exdata})
+        body:JSON.stringify({directions:{"value":exdata}})
       })   
     }catch(e){
       console.log("error at sending the data ")
