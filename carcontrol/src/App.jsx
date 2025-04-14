@@ -9,18 +9,21 @@ function App() {
   const[leftdirection,setleftdirection]=useState(true)
   const[rightdirection,setrightdirection]=useState(true)
   const[btngo,setbtngo]=useState(false)
+  const ubidotstoken="BBUS-xwZlsfZKwah7Lak4VvZhcA1Dy8yR4L"
+  const device_label="esp32"
+ 
+  const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
   async function senddata(dir){
-    let exdir="farward"
+    
     try{
-      await fetch("http://192.168.29.132:5000/orentatiodata",{
+      await fetch(url,{
         method:"POST",
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/json",
+          "X-Auth-Token": ubidotstoken
         },
-        body:JSON.stringify({exdir})
-      })
-      console.log("datasend",exdir)
-    
+        body:JSON.stringify({directions:dir})
+      })   
     }catch(e){
       console.log("error at sending the data ")
     }
