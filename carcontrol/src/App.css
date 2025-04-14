@@ -7,15 +7,15 @@ body{
   width:100%;
 }
 #button1 {
-  height:5vh;
-  width:25vw;
+  height:10vh;
+  width:35vw;
   position: fixed;
   top:20vh;
-  left:45vw;
-  padding: 10px 20px;
+  left:35vw;
+  padding: 5px;
   border-radius: 7px;
   border: 1px solid rgb(61, 106, 255);
-  font-size: 14px;
+  font-size: 4vh;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
