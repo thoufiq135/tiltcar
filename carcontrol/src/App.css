@@ -7,8 +7,10 @@ body{
   width:100%;
 }
 #button1 {
+  height:5vh;
+  width:25vw;
   position: fixed;
-  top:50vh;
+  top:20vh;
   left:45vw;
   padding: 10px 20px;
   border-radius: 7px;
