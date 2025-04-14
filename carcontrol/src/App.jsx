@@ -14,7 +14,7 @@ function App() {
  
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
   async function senddata(dir){
-    const exdata=1
+    const exdata=Math.random(1,5)*10
     try{
       await fetch(url,{
         method:"POST",
