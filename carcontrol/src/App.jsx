@@ -14,7 +14,7 @@ function App() {
  
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
   async function senddata(dir){
-    const exdata=Math.random(1,5)*10
+    // const exdata=Math.random(1,5)*10
     try{
       await fetch(url,{
         method:"POST",
@@ -22,11 +22,13 @@ function App() {
           "Content-Type":"application/json",
           "X-Auth-Token": ubidotstoken
         },
-        body:JSON.stringify({directions:{"value":exdata}})
+        body:JSON.stringify({directions:{"value":dir}})
+        
       })   
     }catch(e){
       console.log("error at sending the data ")
     }
+    console.log("data transerfer completed🥳")
   }
 function values(){
   setbtngo(true)
