@@ -80,6 +80,8 @@ function values(){
      <FontAwesomeIcon icon={faCarOn} />
      </div>
      <p>Tilt any side of your phone🥳</p>
+ 
+     
 
      </>
      :<button id='button1' onClick={values}>Start</button>}
