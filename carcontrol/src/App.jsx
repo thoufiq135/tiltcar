@@ -17,13 +17,13 @@ function values(){
   window.addEventListener("deviceorientation",(e)=>{
     let {beta,gamma}=e
     console.log(beta,gamma)
-    if(beta>-15){
+    if(beta>15){
       setdirection ("farward")
       setfardirection(true)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(false)
-    }else if(beta<15){
+    }else if(beta<-15){
       setdirection("backward") 
       setfardirection(false)
       setbackdirection(true)
