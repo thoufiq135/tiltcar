@@ -10,7 +10,20 @@ function App() {
   const[rightdirection,setrightdirection]=useState(true)
   const[btngo,setbtngo]=useState(false)
   async function senddata(dir){
+    let exdir="farward"
+    try{
+      await fetch("http://localhost:5000/orentatiodata",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({exdir})
+      })
+      console.log("datasend",exdir)
     
+    }catch(e){
+      console.log("error at sending the data ")
+    }
   }
 function values(){
   setbtngo(true)
@@ -46,6 +59,7 @@ function values(){
     }
     if(direction!=null){
       senddata(direction)
+      
     }
   })
 }
@@ -59,7 +73,7 @@ function values(){
      {backdirection?<div id='back'><FontAwesomeIcon icon={faArrowDown} bounce /></div>:""}
      {leftdirection?<div id='left'><FontAwesomeIcon icon={faArrowLeft} beat /></div>:""}
      {rightdirection?<div id='right'><FontAwesomeIcon icon={faArrowRight} beat /></div>:""}
-     <div id='car'>
+     <div id='car' onClick={senddata}>
      <FontAwesomeIcon icon={faCarOn} />
      </div>
      <p>Tilt any side of your phone🥳</p>
