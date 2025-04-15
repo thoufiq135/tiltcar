@@ -150,57 +150,14 @@ p{
   left:68vw;
   font-size: 5vh;
 }
-/*------ Settings ------*/
-.container {
-  --color: #a5a5b0;
-  --size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  font-size: var(--size);
-  user-select: none;
-  fill: var(--color);
-}
-
-.container .play {
-  position: absolute;
-  animation: keyframes-fill .5s;
-}
-
-.container .pause {
-  position: absolute;
-  display: none;
-  animation: keyframes-fill .5s;
-}
-
-/* ------ On check event ------ */
-.container input:checked ~ .play {
-  display: none;
-}
-
-.container input:checked ~ .pause {
-  display: block;
-}
-
-/* ------ Hide the default checkbox ------ */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* ------ Animation ------ */
-@keyframes keyframes-fill {
-  0% {
-    transform: rotate(-180deg) scale(0);
-    opacity: 0;
-  }
-
-  50% {
-    transform: rotate(-10deg) scale(1.2);
-  }
+#pause{
+  height:5vh;
+  width:23vw;
+  font-size: 3vh;
+  background-color: gray;
+  border-radius: 2vh;
+  border:0.2vh solid black;
+  position: fixed;
+  top:5vh;
+  left:2vw
 }
