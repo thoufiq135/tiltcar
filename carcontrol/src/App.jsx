@@ -12,9 +12,7 @@ function App() {
   const[btngo,setbtngo]=useState(false)
   const ubidotstoken="BBUS-xwZlsfZKwah7Lak4VvZhcA1Dy8yR4L"
   const device_label="car-control"
- 
   const url=`https://industrial.api.ubidots.com/api/v1.6/devices/${device_label}/`;
-
     // const exdata=Math.random(1,5)*10
     useEffect(()=>{
       const setdata=async ()=>{
@@ -26,8 +24,7 @@ function App() {
                 "Content-Type":"application/json",
                 "X-Auth-Token": ubidotstoken
               },
-              body:JSON.stringify({directions:{"value":0}})
-              
+              body:JSON.stringify({directions:{"value":0}}) 
             })
             console.log("data transerfer completed🥳")   
           }catch(e){
@@ -46,41 +43,38 @@ function App() {
           console.log("data transerfer completed🥳")   
         }catch(e){
           console.log("error at sending the data ")
-        }}
-       
+        }} 
       }
       setdata()
     },[direction,stop])
-    
-  
 function values(){
   setbtngo(true)
   window.addEventListener("deviceorientation",(e)=>{
     let {beta,gamma}=e
     console.log(beta,gamma)
-    if(beta>15){
-      setdirection (1)
+    if(beta>30){
+      setdirection (3)
       setfardirection(true)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(false)
       setstop(false)
-    }else if(beta<-15){
-      setdirection(2) 
+    }else if(beta<-30){
+      setdirection(4) 
       setfardirection(false)
       setbackdirection(true)
       setleftdirection(false)
       setrightdirection(false) 
       setstop(false)   
-    }else if(gamma>15){
-      setdirection(3) 
+    }else if(gamma>30){
+      setdirection(1) 
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(true)
       setstop(false)
-    }else if(gamma<-15) {
-      setdirection(4)
+    }else if(gamma<-30) {
+      setdirection(2)
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(true)
@@ -95,10 +89,8 @@ function values(){
 function hault(){
   setstop(true)
 }
-
   return (
     <>
-    
      {btngo?
      <>
      {fardirection?<div id='front'><FontAwesomeIcon icon={faArrowUp} bounce /></div>:""}
@@ -110,15 +102,9 @@ function hault(){
      </div>
      <p>Tilt any side of your phone🥳</p>
      {/* <button id='pause' onClick={stop}>Pause</button> */}
- 
-     
-
      </>
      :<button id='button1' onClick={values}>Start</button>}
     </>
   )
 }
-  
-
-
 export default App
