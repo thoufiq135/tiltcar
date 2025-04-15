@@ -67,14 +67,14 @@ function values(){
       setrightdirection(false) 
       setstop(false)   
     }else if(gamma>30){
-      setdirection(1) 
+      setdirection(2) 
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(false)
       setrightdirection(true)
       setstop(false)
     }else if(gamma<-30) {
-      setdirection(2)
+      setdirection(1)
       setfardirection(false)
       setbackdirection(false)
       setleftdirection(true)
